@@ -1,0 +1,9 @@
+general.import = ["colors.toml"]
+[terminal.shell]
+program = "fish"
+[font]
+normal.family = "CaskaydiaCove Nerd Font"
+
+[window]
+opacity = 0.5
+decorations = "none"

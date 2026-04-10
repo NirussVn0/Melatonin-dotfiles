@@ -1,0 +1,184 @@
+/* =============================================================================
+ *  Global Styles
+ * =========================================================================== */
+
+@import "/home/machado/.config/waybar/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+    transition: all 0.3s ease;
+}
+
+window#waybar {
+    background: @background;
+    color: @on_surface;
+    margin: 0px;
+    border-radius: 0px;
+    min-height: 18px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+tooltip {
+    background: @surface_container_low;
+    border: 1px solid @outline;
+    border-radius: 4px;
+}
+
+tooltip label {
+    color: @on_surface;
+}
+
+/* =============================================================================
+ *  General Module Styles
+ * =========================================================================== */
+
+#window,
+#clock,
+#cpu,
+#custom-distro,
+#memory,
+#custom-notification,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#mpris,
+#battery,
+#tray {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    padding: 0 10px;
+    margin: 3px 3px;
+    border-radius: 2px;
+}
+
+#custom-distro {
+    padding: 0 16px 0 8px;
+    font-size: 14px;
+}
+
+/* =============================================================================
+ *  Center Modules (Fused)
+ * =========================================================================== */
+
+#custom-notification {
+    margin: 3px 0 3px 0px;
+    border-radius: 2px 0 0 2px;
+    padding: 0px 5px 0px 10px;
+}
+
+#clock {
+    margin: 3px 0px 3px 0;
+    border-radius: 0;
+    padding: 0px 5px;
+}
+
+#tray {
+    margin: 3px 0;
+    border-radius: 0 2px 2px 0;
+    padding: 0 10px 0 5px;
+}
+
+/* =============================================================================
+ *  Individual Module Styles
+ * =========================================================================== */
+
+#tags {
+    background: transparent;
+    padding: 0;
+    margin: 0px 0;
+}
+
+#tags button {
+    padding: 0 6px;
+    margin: 3px 3;
+    border-radius: 2px;
+    color: @on_secondary_container;
+    background-color: @secondary_container;
+    transition: all 0s linear;
+}
+
+/* =============================================================================
+ *  Module States
+ * =========================================================================== */
+#mpris {
+    color: @on_background;
+    background-color: @primary_container;
+}
+
+/* Tags */
+#tags button.focused {
+    background-color: @primary;
+    color: @surface_container;
+    border-radius: 2px;
+}
+
+#tags button.urgent {
+    background-color: @error;
+    color: @on_error;
+}
+
+#tags button:not(.occupied):not(.focused) {
+    font-size: 0;
+    min-width: 0;
+    min-height: 0;
+    margin: -17px;
+    padding: 0;
+    color: transparent;
+    background-color: transparent;
+}
+
+/* Window */
+#window.empty {
+    background-color: @background;
+    color: @background;
+}
+
+/* Battery */
+#battery.charging,
+#battery.plugged {
+    color: @primary;
+}
+
+#battery.warning:not(.charging) {
+    color: @on_error_container;
+}
+
+#battery.critical:not(.charging) {
+    color: @on_error;
+}
+
+/* Network */
+#network.disconnected,
+#network.disabled {
+    color: @outline;
+    background-color: @surface_container_highest;
+}
+
+/* Bluetooth */
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @outline;
+    background-color: @surface_container_highest;
+}
+
+#bluetooth.connected {
+    color: @tertiary;
+}
+
+/* Audio */
+#pulseaudio.muted {
+    color: @outline;
+    background-color: @surface_container_highest;
+}
+
+/* Clock */
+#clock.calendar {
+    border-radius: 4px;
+}
